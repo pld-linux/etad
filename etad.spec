@@ -19,15 +19,15 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 UPS power management under Linux for ETA Products. It allows your
 computer/server to run during power problems for a specified length of
-time or the life of the batteries in your UPS and then properly executes
-a controlled shutdown during an extended power failure.
+time or the life of the batteries in your UPS and then properly
+executes a controlled shutdown during an extended power failure.
 
 %description -l pl
-Program zarz±dzaj±cy zasialaczami UPS firmy ETA.
-Umo¿liwia on pracê komputera w trakcie problemów z zasilaniem przez
-okre¶lony czas z jednoczesn± kontrol± stanu na³adowania baterii,
-a nastêpnie przeprowadza kontrolowane wy³±cznie systemu w razie
-przed³u¿aj±cej siê awarii zasilania.
+Program zarz±dzaj±cy zasialaczami UPS firmy ETA. Umo¿liwia on pracê
+komputera w trakcie problemów z zasilaniem przez okre¶lony czas z
+jednoczesn± kontrol± stanu na³adowania baterii, a nastêpnie
+przeprowadza kontrolowane wy³±cznie systemu w razie przed³u¿aj±cej siê
+awarii zasilania.
 
 %prep
 %setup -q
