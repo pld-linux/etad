@@ -1,0 +1,9 @@
+diff -uNr etad-1.0.orig/do_haltnow etad-1.0/do_haltnow
+--- etad-1.0.orig/do_haltnow	Tue Mar 21 08:54:00 2000
++++ etad-1.0/do_haltnow	Wed Apr 25 01:41:20 2001
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ # Skrypt uruchamiany w przypadku, gdy nie ma zasilania sieciowego
+ # i jest niski poziom napiecia baterii UPSa
+ 

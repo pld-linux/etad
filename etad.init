@@ -1,0 +1,63 @@
+#!/bin/sh
+#
+# etad           This shell script takes care of starting and stopping
+#                etad (ETA UPS daemon).
+#
+# chkconfig:	2345 10 99
+#
+# description:	etad is the print daemon required for etad to work  properly. \
+#		It is basically a server that monitor your UPS.
+#
+# processname:	etad
+# config:	/etc/sysconfig/etad
+
+
+# Source function library
+. /etc/rc.d/init.d/functions
+
+# Get network config
+. /etc/sysconfig/network
+
+# Get service config
+[ -f /etc/sysconfig/etad ] && . /etc/sysconfig/etad
+
+
+# See how we were called.
+case "$1" in
+  start)
+	# Check if the service is already running?
+        if [ ! -f /var/lock/subsys/etad ]; then
+                msg_starting etad
+                daemon etad $PORT
+                RETVAL=$?
+                [ $RETVAL -eq 0 ] && touch /var/lock/subsys/etad
+        else
+                msg_Already_Running Lpd
+                exit 1
+        fi
+        ;;
+  stop)
+        # Stop daemons.
+        if [ -f /var/lock/subsys/etad ]; then
+                msg_stopping Etad
+                killproc etad
+                rm -f /var/lock/subsys/etad >/dev/null 2>&1
+        else
+                msg_Not_Running etad
+                exit 1
+        fi
+        ;;
+  status)
+	status etad
+	exit $?
+	;;
+  restart)
+	$0 stop
+	$0 start
+	;;
+  *)
+	msg_Usage "$0 {start|stop|status|restart}"
+        exit 1
+esac
+
+exit $RETVAL
