@@ -48,10 +48,10 @@ install %{SOURCE2} $RPM_BUILD_ROOT/etc/sysconfig/etad
 rm -rf ${RPM_BUILD_ROOT}
 
 %post
-/sbin/chkconfig --add etad
+%chkconfig_add
 
 %preun
-chkconfig --del etad
+%chkconfig_del
 
 %files
 %defattr(644,root,root,755)
