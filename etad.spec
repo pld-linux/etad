@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Networking/Daemons
 Source0:	http://www.eta.com.pl/download/%{name}-%{version}.tar.gz
+# Source0-md5:	0e9c2b96a24153ad23bf0c2c7680dbd5
 Source1:	%{name}.init
 Source2:	%{name}.config
 Patch0:		%{name}.patch
