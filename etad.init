@@ -1,7 +1,7 @@
 #!/bin/sh
 #
-# etad           This shell script takes care of starting and stopping
-#                etad (ETA UPS daemon).
+# etad		This shell script takes care of starting and stopping
+#		etad (ETA UPS daemon).
 #
 # chkconfig:	2345 10 99
 #
@@ -26,38 +26,38 @@
 case "$1" in
   start)
 	# Check if the service is already running?
-        if [ ! -f /var/lock/subsys/etad ]; then
-                msg_starting etad
-                daemon etad $PORT
-                RETVAL=$?
-                [ $RETVAL -eq 0 ] && touch /var/lock/subsys/etad
-        else
-                msg_Already_Running Lpd
-                exit 1
-        fi
-        ;;
+	if [ ! -f /var/lock/subsys/etad ]; then
+		msg_starting etad
+		daemon etad $PORT
+		RETVAL=$?
+		[ $RETVAL -eq 0 ] && touch /var/lock/subsys/etad
+	else
+		msg_already_running Lpd
+		exit 1
+	fi
+	;;
   stop)
-        # Stop daemons.
-        if [ -f /var/lock/subsys/etad ]; then
-                msg_stopping Etad
-                killproc etad
-                rm -f /var/lock/subsys/etad >/dev/null 2>&1
-        else
-                msg_Not_Running etad
-                exit 1
-        fi
-        ;;
+	# Stop daemons.
+	if [ -f /var/lock/subsys/etad ]; then
+		msg_stopping Etad
+		killproc etad
+		rm -f /var/lock/subsys/etad >/dev/null 2>&1
+	else
+		msg_not_running etad
+		exit 1
+	fi
+	;;
   status)
 	status etad
 	exit $?
 	;;
-  restart)
+  restart|reload)
 	$0 stop
 	$0 start
 	;;
   *)
-	msg_Usage "$0 {start|stop|status|restart}"
-        exit 1
+	msg_usage "$0 {start|stop|restart|reload|status}"
+	exit 1
 esac
 
 exit $RETVAL
