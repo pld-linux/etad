@@ -1,5 +1,5 @@
 Summary:	Power management software for ETA UPS
-Summary(pl):	Program zarz±dzaj±cy zasilaczami UPS firmy ETA.
+Summary(pl):	Program zarz±dzaj±cy zasilaczami UPS firmy ETA
 Name:		etad
 Version:	1.0
 Release:	1
@@ -12,9 +12,8 @@ Source1:	%{name}.init
 Source2:	%{name}.config
 Patch0:		%{name}.patch
 URL:		http://www.eta.com.pl/
+Prereq:		/sbin/chkconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_sysconfdir	/etc
 
 %description
 UPS power management under Linux for ETA Products. It allows your
@@ -23,7 +22,7 @@ time or the life of the batteries in your UPS and then properly
 executes a controlled shutdown during an extended power failure.
 
 %description -l pl
-Program zarz±dzaj±cy zasialaczami UPS firmy ETA. Umo¿liwia on pracê
+Program zarz±dzaj±cy zasilaczami UPS firmy ETA. Umo¿liwia on pracê
 komputera w trakcie problemów z zasilaniem przez okre¶lony czas z
 jednoczesn± kontrol± stanu na³adowania baterii, a nastêpnie
 przeprowadza kontrolowane wy³±cznie systemu w razie przed³u¿aj±cej siê
@@ -51,7 +50,9 @@ rm -rf ${RPM_BUILD_ROOT}
 /sbin/chkconfig --add etad
 
 %preun
-chkconfig --del etad
+if [ "$1" = "0" ]; then
+	/sbin/chkconfig --del etad
+fi
 
 %files
 %defattr(644,root,root,755)
