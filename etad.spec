@@ -59,5 +59,5 @@ fi
 %doc README
 %doc manual.html
 %attr(755,root,root) %{_sbindir}/*
-%attr(640,root,root) %config(noreplace) /etc/sysconfig/etad
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/etad
 %attr(754,root,root) /etc/rc.d/init.d/etad
