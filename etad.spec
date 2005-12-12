@@ -11,8 +11,8 @@ Source1:	%{name}.init
 Source2:	%{name}.config
 Patch0:		%{name}.patch
 URL:		http://www.eta.com.pl/
-PreReq:		rc-scripts
 Requires(post,preun):	/sbin/chkconfig
+Requires:	rc-scripts
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
