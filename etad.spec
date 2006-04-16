@@ -3,7 +3,7 @@ Summary(pl):	Program zarz±dzaj±cy zasilaczami UPS firmy ETA
 Name:		etad
 Version:	1.0
 Release:	1
-License:	GPL
+License:	GPL v2
 Group:		Networking/Daemons
 Source0:	http://www.eta.com.pl/download/%{name}-%{version}.tar.gz
 # Source0-md5:	0e9c2b96a24153ad23bf0c2c7680dbd5
@@ -33,7 +33,9 @@ awarii zasilania.
 %patch0 -p1
 
 %build
-%{__make}
+%{__make} \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -56,8 +58,7 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc README
-%doc manual.html
+%doc README manual.html
 %attr(755,root,root) %{_sbindir}/*
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/etad
 %attr(754,root,root) /etc/rc.d/init.d/etad
