@@ -46,7 +46,7 @@ install %{SOURCE1} $RPM_BUILD_ROOT/etc/rc.d/init.d/etad
 install %{SOURCE2} $RPM_BUILD_ROOT/etc/sysconfig/etad
 
 %clean
-rm -rf ${RPM_BUILD_ROOT}
+rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/chkconfig --add etad
