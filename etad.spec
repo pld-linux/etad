@@ -1,5 +1,5 @@
 Summary:	Power management software for ETA UPS
-Summary(pl):	Program zarz±dzaj±cy zasilaczami UPS firmy ETA
+Summary(pl.UTF-8):   Program zarzÄ…dzajÄ…cy zasilaczami UPS firmy ETA
 Name:		etad
 Version:	1.0
 Release:	1
@@ -21,11 +21,11 @@ computer/server to run during power problems for a specified length of
 time or the life of the batteries in your UPS and then properly
 executes a controlled shutdown during an extended power failure.
 
-%description -l pl
-Program zarz±dzaj±cy zasilaczami UPS firmy ETA. Umo¿liwia on pracê
-komputera w trakcie problemów z zasilaniem przez okre¶lony czas z
-jednoczesn± kontrol± stanu na³adowania baterii, a nastêpnie
-przeprowadza kontrolowane wy³±cznie systemu w razie przed³u¿aj±cej siê
+%description -l pl.UTF-8
+Program zarzÄ…dzajÄ…cy zasilaczami UPS firmy ETA. UmoÅ¼liwia on pracÄ™
+komputera w trakcie problemÃ³w z zasilaniem przez okreÅ›lony czas z
+jednoczesnÄ… kontrolÄ… stanu naÅ‚adowania baterii, a nastÄ™pnie
+przeprowadza kontrolowane wyÅ‚Ä…cznie systemu w razie przedÅ‚uÅ¼ajÄ…cej siÄ™
 awarii zasilania.
 
 %prep
