@@ -1,5 +1,5 @@
 Summary:	Power management software for ETA UPS
-Summary(pl.UTF-8):   Program zarządzający zasilaczami UPS firmy ETA
+Summary(pl.UTF-8):	Program zarządzający zasilaczami UPS firmy ETA
 Name:		etad
 Version:	1.0
 Release:	1
